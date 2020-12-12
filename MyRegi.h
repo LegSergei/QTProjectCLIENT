@@ -14,7 +14,7 @@ public:
 	QTcpSocket* recieved_socket;
 
 public slots:
-	void recieveData(QTcpSocket* recieved_socket); // Этот слот будет принимать сокет из другой формы. В теории.
+	void recieveData(QTcpSocket* recieved_socket); // Этот слот будет принимать сокет из другой формы.
 	void ServMessage(QString String);
 
 

@@ -13,156 +13,149 @@
   <property name="windowTitle">
    <string>MyRegi</string>
   </property>
-  <widget class="QTextEdit" name="te_Main">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>50</y>
-     <width>391</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="readOnly">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>160</y>
-     <width>131</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Введите Логин:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>200</y>
-     <width>131</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Введите Пароль:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>240</y>
-     <width>131</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Повторите Пароль:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="le_Login">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>160</y>
-     <width>161</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>user9</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="le_Pass_1">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>200</y>
-     <width>161</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>777</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="le_Pass_2">
-   <property name="geometry">
-    <rect>
-     <x>190</x>
-     <y>240</y>
-     <width>161</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>777</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_4">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>20</y>
-     <width>351</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Регистрация нового пользователя</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pb_reg">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>290</y>
-     <width>141</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Регистрация</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pb_back">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>350</y>
-     <width>141</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Назад</string>
-   </property>
-  </widget>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="2" column="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>230</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Введите Логин:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="3">
+    <widget class="QLabel" name="label_4">
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Регистрация нового пользователя</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <spacer name="horizontalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>230</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="7" column="0">
+    <widget class="QPushButton" name="pb_back">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Назад</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Введите Пароль:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="le_Pass_2">
+     <property name="text">
+      <string>777</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Повторите Пароль:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="le_Pass_1">
+     <property name="text">
+      <string>777</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="3">
+    <widget class="QTextEdit" name="te_Main">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="2">
+    <spacer name="horizontalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>230</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="le_Login">
+     <property name="text">
+      <string>user9</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QPushButton" name="pb_reg">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Регистрация</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

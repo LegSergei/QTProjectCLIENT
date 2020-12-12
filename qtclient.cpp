@@ -9,13 +9,23 @@ QtCLIENT::QtCLIENT(QWidget *parent)
     : QWidget(parent)
 {
     ui.setupUi(this);
+    my_reg = new MyRegi();
+    my_auth = new MyAutho();
+    connect(my_reg, &MyRegi::Return, this, &QtCLIENT::show);
+    connect(my_auth, &MyAutho::Return_2, this, &QtCLIENT::show);
+    connect(this, &QtCLIENT::sendData, my_reg, &MyRegi::recieveData);
+    connect(this, &QtCLIENT::send_to_Registration, my_reg, &MyRegi::ServMessage);
+    connect(this, &QtCLIENT::sendData_2, my_auth, &MyAutho::recieveData_2);
+    connect(this, &QtCLIENT::send_to_Authorization, my_auth, &MyAutho::ServMessage_2);
+    connect(my_auth, &MyAutho::Success, this, &QtCLIENT::res_Authorization);
     connect(ui.pb_connect, &QPushButton::clicked, this, &QtCLIENT::my_Connect);
     connect(ui.pb_send, &QPushButton::clicked, this, &QtCLIENT::my_SendMessage);
     connect(ui.pb_Registration, &QPushButton::clicked, this, &QtCLIENT::my_Registration);
     connect(ui.pb_Authorization, &QPushButton::clicked, this, &QtCLIENT::my_Authorization);
     connect(ui.pb_Ref, &QPushButton::clicked, this, &QtCLIENT::Refresh);
     connect(ui.pb_exit, &QPushButton::clicked, this, &QtCLIENT::Exit);
-    connect(ui.pb_change, &QPushButton::clicked, this, &QtCLIENT::ChatChange);
+//    connect(ui.pb_change, &QPushButton::clicked, this, &QtCLIENT::ChatChange);
+    connect(ui.tabWidget, &QTabWidget::currentChanged, this, &QtCLIENT::ChatChange);
     UserName = u8"Аноним";
     Chat_number = 1;
     ui.le_username->setText(UserName);
@@ -72,7 +82,7 @@ void QtCLIENT::my_SendMessage()
     QString new_message = "AA0A%&?" + UserName + "%&?" + ui.le_message->text();
     my_socket->write(new_message.toUtf8());
     ui.le_message->clear();
-
+    my_socket->flush();
     QtCLIENT::Refresh();
 
 }
@@ -85,13 +95,11 @@ void QtCLIENT::my_Connected()
     ui.pb_Ref->setEnabled(true);
     ui.pb_Authorization->setEnabled(true);
     ui.pb_Registration->setEnabled(true);
-    ui.pb_change->setEnabled(true);
     ui.le_message->setEnabled(true);
     QtCLIENT::Refresh();
-    //
+
     my_socket_2 = qobject_cast<QTcpSocket*>(sender()); //Сохранение сокета.sender - это указатель на объект, испустивший сигнал.
-    // По идее сюда сохранится указатель на сокет.
-    //
+
     ui.pb_connect->setEnabled(true);
 }
 
@@ -102,7 +110,6 @@ void QtCLIENT::my_DConnected()
     ui.pb_Ref->setEnabled(false);
     ui.pb_Authorization->setEnabled(false);
     ui.pb_Registration->setEnabled(false);
-    ui.pb_change->setEnabled(false);
     my_socket->deleteLater();
     my_socket = nullptr;
 }
@@ -167,11 +174,6 @@ void QtCLIENT::my_readyRead()
 
 void QtCLIENT::my_Registration()
 {
-    my_reg = new MyRegi();
-    connect(my_reg, &MyRegi::Return, this, &QtCLIENT::show);
-    connect(this, SIGNAL(sendData(QTcpSocket*)), my_reg, SLOT(recieveData(QTcpSocket*)));
-    connect(this, SIGNAL(send_to_Registration(QString)), my_reg, SLOT(ServMessage(QString)));
-    // Подключение Эта форма, сигнал, вторая форма, слот для обработки
     my_reg->show();
     this->close();
     emit sendData(my_socket_2);
@@ -179,11 +181,7 @@ void QtCLIENT::my_Registration()
 
 void QtCLIENT::my_Authorization()
 {
-    MyAutho* my_auth = new MyAutho();
-    connect(my_auth, &MyAutho::Return_2, this, &QtCLIENT::show);
-    connect(this, SIGNAL(sendData_2(QTcpSocket*)), my_auth, SLOT(recieveData_2(QTcpSocket*)));
-    connect(this, SIGNAL(send_to_Authorization(QString)), my_auth, SLOT(ServMessage_2(QString)));
-    connect(my_auth, SIGNAL(Success(QString)), this, SLOT(res_Authorization(QString)));
+
     my_auth->show();
     this->close();
     emit sendData_2(my_socket_2);
@@ -194,6 +192,7 @@ void QtCLIENT::Refresh()
     if (Chat_number == 1)
     {
         ui.te_main->clear();
+        ui.te_main_2->clear();
         QString new_message = "AA1A";
         my_socket->write(new_message.toUtf8());
         return;
@@ -201,6 +200,7 @@ void QtCLIENT::Refresh()
     if (Chat_number == 2)
     {
         ui.te_main->clear();
+        ui.te_main_2->clear();
         QString new_message = "AA2A";
         my_socket->write(new_message.toUtf8());
         return;
@@ -226,28 +226,29 @@ void QtCLIENT::MainMessageManufacturing(QString String)
     {
         QString message = list[i];
         message.remove(0, 4);
-        ui.te_main->append(message);
+        if (Chat_number == 1) {
+            ui.te_main->append(message);
+        }
+        if (Chat_number == 2) {
+            ui.te_main_2->append(message);
+        }
     }
 
 }
 
 void QtCLIENT::ChatChange()
 {
-    if (Chat_number == 1)
+    if (ui.tabWidget->currentIndex() == 0)
     {
-        ui.pb_change->setText(u8"2");
-        Chat_number = 2;
-        QtCLIENT::Refresh();
-        return;
-    }
-
-    if (Chat_number == 2)
-    {
-        ui.pb_change->setText(u8"1");
         Chat_number = 1;
         QtCLIENT::Refresh();
-        return;
     }
+    if (ui.tabWidget->currentIndex() == 1)
+    {
+        Chat_number = 2;
+        QtCLIENT::Refresh();
+    }
+
 }
 
 void QtCLIENT::res_Authorization(QString String)

@@ -1,6 +1,8 @@
 ﻿#include "MyRegi.h"
 #include <QTcpSocket>
 #include <qdatetime.h>
+#include <QCryptographicHash>
+#include <QString>
 
 MyRegi::MyRegi(QWidget *parent)
 	: QWidget(parent)
@@ -97,7 +99,9 @@ void MyRegi::my_Registration()
 	{
 		ui.te_Main->append(u8"Ошибка! Пароли не совпадают!");
 		return;
-	}
+	} 
+	QByteArray hash_pass = QCryptographicHash::hash(Pass1.toUtf8(), (QCryptographicHash::Algorithm) 1);
+	Pass1 = QString(hash_pass);
 	QString registration = u8"AA7A " + Login + u8" " + Pass1;
 	QByteArray ba_registration;
 	ba_registration.append(registration);

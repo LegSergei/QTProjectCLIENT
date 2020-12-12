@@ -6,194 +6,191 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>626</width>
-    <height>536</height>
+    <width>622</width>
+    <height>518</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>QtCLIENT</string>
   </property>
-  <widget class="QPushButton" name="pb_connect">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>420</y>
-     <width>111</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Подключиться</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="te_main">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>80</y>
-     <width>541</width>
-     <height>251</height>
-    </rect>
-   </property>
-   <property name="readOnly">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="le_message">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>360</y>
-     <width>401</width>
-     <height>41</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pb_send">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>360</y>
-     <width>111</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Отправить</string>
-   </property>
-  </widget>
-  <widget class="QTextEdit" name="te_support">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
-     <y>420</y>
-     <width>261</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="readOnly">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pb_Registration">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>40</y>
-     <width>121</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Зарегистрироваться</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="le_username">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>50</y>
-     <width>111</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="readOnly">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>50</y>
-     <width>111</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>11</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Вы вошли как:</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pb_Authorization">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>330</x>
-     <y>40</y>
-     <width>121</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Войти</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pb_Ref">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>420</y>
-     <width>121</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Обновить</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pb_exit">
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>470</y>
-     <width>121</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Выход</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pb_change">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>590</x>
-     <y>80</y>
-     <width>31</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>1</string>
-   </property>
-  </widget>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Вы вошли как:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1" colspan="2">
+    <widget class="QLineEdit" name="le_username">
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QPushButton" name="pb_Authorization">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Войти</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="4">
+    <widget class="QPushButton" name="pb_Registration">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Зарегистрироваться</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="5">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Чат №1</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="te_main">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Чат №2</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="te_main_2">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_3">
+      <attribute name="title">
+       <string>Системные сообщения</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="te_support">
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QPushButton" name="pb_send">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>35</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Отправить сообщение</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2" colspan="3">
+    <widget class="QLineEdit" name="le_message">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>35</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QPushButton" name="pb_connect">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>35</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Подключиться</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="4">
+    <widget class="QPushButton" name="pb_Ref">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>35</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Обновить чат</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="4">
+    <widget class="QPushButton" name="pb_exit">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>35</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Выход</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

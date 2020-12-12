@@ -7,6 +7,7 @@
 #include "ui_MyAutho.h"
 
 class MyRegi;
+class MyAutho;
 class QtCLIENT : public QWidget
 {
     Q_OBJECT
@@ -21,8 +22,8 @@ public slots:
 
 
 signals:
-    void sendData(QTcpSocket* send_socket); // Этот сигна будет передавать сокет в другую форму. В теории.
-    void sendData_2(QTcpSocket* send_socket_2); // Этот сигна будет передавать сокет в другую форму. В теории.
+    void sendData(QTcpSocket* send_socket); // Этот сигна будет передавать сокет в другую форму.
+    void sendData_2(QTcpSocket* send_socket_2); // Этот сигна будет передавать сокет в другую форму.
     void send_to_Registration(QString String); // Передача сообщения сервера на форму.
     void send_to_Authorization(QString String);
 
@@ -32,6 +33,7 @@ private:
     QTcpSocket* my_socket;
     QTcpSocket* my_socket_2;
     MyRegi* my_reg;
+    MyAutho* my_auth;
 
 
 private slots:

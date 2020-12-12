@@ -1,12 +1,14 @@
 ﻿#include "MyAutho.h"
 #include <qdatetime.h>
+#include <QCryptographicHash>
+#include <QString>
 
 MyAutho::MyAutho(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
 	ui.te_Main->append(u8"Добро пожаловать!");
-	ui.te_Main->append(u8"Здесь вы можете создать нового пользователя.");
+	ui.te_Main->append(u8"Здесь вы можете войти в свою учетную запись.");
 	connect(ui.pb_back, &QPushButton::clicked, this, &MyAutho::my_Back);
 	connect(ui.pb_autho, &QPushButton::clicked, this, &MyAutho::my_Authorization);
 }
@@ -24,6 +26,7 @@ void MyAutho::ServMessage_2(QString String)
 		emit Success(login_name);
 	}
 	ui.te_Main->append(String);
+	MyAutho::my_Back();
 }
 
 void MyAutho::recieveData_2(QTcpSocket* recieved_socket_2)
@@ -44,8 +47,6 @@ void MyAutho::recieveData_2(QTcpSocket* recieved_socket_2)
 		return;
 	}
 	autho_socket = recieved_socket_2;
-	ui.te_Main->append(u8"Сокет успешно передан.");
-//	connect(regis_socket, &QTcpSocket::readyRead, this, &MyRegi::my_readyRead);
 }
 
 void MyAutho::my_Authorization()
@@ -72,6 +73,8 @@ void MyAutho::my_Authorization()
 		ui.te_Main->append(u8"Ошибка! Длина Пароля не может превышать 15 символов!");
 		return;
 	}
+	QByteArray hash_pass = QCryptographicHash::hash(Pass1.toUtf8(), (QCryptographicHash::Algorithm) 1);
+	Pass1 = QString(hash_pass);
 	QString Authorization = u8"AA9A " + Login + u8" " + Pass1;
 	QByteArray ba_authorization;
 	ba_authorization.append(Authorization);
