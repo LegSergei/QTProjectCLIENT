@@ -96,6 +96,7 @@ void QtCLIENT::my_Connected()
     ui.pb_Authorization->setEnabled(true);
     ui.pb_Registration->setEnabled(true);
     ui.le_message->setEnabled(true);
+    ui.tabWidget->setEnabled(true);
     QtCLIENT::Refresh();
 
     my_socket_2 = qobject_cast<QTcpSocket*>(sender()); //Сохранение сокета.sender - это указатель на объект, испустивший сигнал.
@@ -110,6 +111,7 @@ void QtCLIENT::my_DConnected()
     ui.pb_Ref->setEnabled(false);
     ui.pb_Authorization->setEnabled(false);
     ui.pb_Registration->setEnabled(false);
+    ui.tabWidget->setEnabled(false);
     my_socket->deleteLater();
     my_socket = nullptr;
 }

@@ -11,7 +11,7 @@ MyRegi::MyRegi(QWidget *parent)
 	ui.te_Main->append(u8"Добро пожаловать!");
 	ui.te_Main->append(u8"Здесь вы можете создать нового пользователя.");
 	ui.te_Main->append(u8"Пожалуйста помните, что длина логина и пароля не может превышать 15 символов.");
-	ui.te_Main->append(u8"Пробелы в логине и пароле не допускаются.");
+	ui.te_Main->append(u8"Пробелы или комбинация %&? в логине и пароле не допускаются.");
 	connect(ui.pb_back, &QPushButton::clicked, this, &MyRegi::my_Back);
 	connect(ui.pb_reg, &QPushButton::clicked, this, &MyRegi::my_Registration);
 }
@@ -73,6 +73,11 @@ void MyRegi::my_Registration()
 		ui.te_Main->append(u8"Ошибка! Длина Логина не должна превышать 15 символов!");
 		return;
 	}
+	if (Login.indexOf("%&?") != -1)
+	{
+		ui.te_Main->append(u8"Ошибка! Логин содержит запрещенную комбинацию символов - <%&?>!");
+		return;
+	}
 	QString Pass1 = ui.le_Pass_1->text();
 	if (Pass1 == "")
 	{
@@ -82,6 +87,11 @@ void MyRegi::my_Registration()
 	if (Pass1.indexOf(" ") != -1)
 	{
 		ui.te_Main->append(u8"Ошибка! Пароль не должен содержать пробелы!");
+		return;
+	}
+	if (Pass1.indexOf("%&?") != -1)
+	{
+		ui.te_Main->append(u8"Ошибка! Пароль содержит запрещенную комбинацию символов - <%&?>!");
 		return;
 	}
 	if (Pass1.length() > 15)

@@ -24,9 +24,10 @@ void MyAutho::ServMessage_2(QString String)
 	{
 		QString login_name = ui.le_Login->text();
 		emit Success(login_name);
+		MyAutho::my_Back();
 	}
 	ui.te_Main->append(String);
-	MyAutho::my_Back();
+
 }
 
 void MyAutho::recieveData_2(QTcpSocket* recieved_socket_2)
@@ -62,6 +63,16 @@ void MyAutho::my_Authorization()
 		ui.te_Main->append(u8"Ошибка! Длина Логина не может превышать 15 символов!");
 		return;
 	}
+	if (Login.indexOf(" ") != -1)
+	{
+		ui.te_Main->append(u8"Ошибка! Логин не должен содержать пробелы!");
+		return;
+	}
+	if (Login.indexOf("%&?") != -1)
+	{
+		ui.te_Main->append(u8"Ошибка! Логин содержит запрещенную комбинацию символов - <%&?>!");
+		return;
+	}
 	QString Pass1 = ui.le_Pass->text();
 	if (Pass1 == "")
 	{
@@ -71,6 +82,16 @@ void MyAutho::my_Authorization()
 	if (Pass1.length() > 15)
 	{
 		ui.te_Main->append(u8"Ошибка! Длина Пароля не может превышать 15 символов!");
+		return;
+	}
+	if (Pass1.indexOf(" ") != -1)
+	{
+		ui.te_Main->append(u8"Ошибка! Пароль не должен содержать пробелы!");
+		return;
+	}
+	if (Pass1.indexOf("%&?") != -1)
+	{
+		ui.te_Main->append(u8"Ошибка! Пароль содержит запрещенную комбинацию символов - <%&?>!");
 		return;
 	}
 	QByteArray hash_pass = QCryptographicHash::hash(Pass1.toUtf8(), (QCryptographicHash::Algorithm) 1);
