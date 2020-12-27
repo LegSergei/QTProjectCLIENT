@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="MyRegiPrefix">
+    <file>image/116947-digital_art.jpg</file>
+  </qresource>
+</RCC>

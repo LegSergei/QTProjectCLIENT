@@ -68,11 +68,6 @@ void MyRegi::my_Registration()
 		ui.te_Main->append(u8"Ошибка! Логин не должен содержать пробелы!");
 		return;
 	}
-	if (Login.length() > 15)
-	{
-		ui.te_Main->append(u8"Ошибка! Длина Логина не должна превышать 15 символов!");
-		return;
-	}
 	if (Login.indexOf("%&?") != -1)
 	{
 		ui.te_Main->append(u8"Ошибка! Логин содержит запрещенную комбинацию символов - <%&?>!");
@@ -92,11 +87,6 @@ void MyRegi::my_Registration()
 	if (Pass1.indexOf("%&?") != -1)
 	{
 		ui.te_Main->append(u8"Ошибка! Пароль содержит запрещенную комбинацию символов - <%&?>!");
-		return;
-	}
-	if (Pass1.length() > 15)
-	{
-		ui.te_Main->append(u8"Ошибка! Длина Пароля не должна превышать 15 символов!");
 		return;
 	}
 	QString Pass2 = ui.le_Pass_2->text();

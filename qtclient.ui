@@ -11,7 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>QtCLIENT</string>
+   <string>Chat Client</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#QtCLIENTClass { background-color: rgb(52, 57, 68); }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
    <item row="0" column="0">
@@ -21,6 +24,9 @@
        <pointsize>11</pointsize>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{ background-color: rgb(195, 203, 217); }</string>
+     </property>
      <property name="text">
       <string>Вы вошли как:</string>
      </property>
@@ -28,10 +34,19 @@
    </item>
    <item row="0" column="1" colspan="2">
     <widget class="QLineEdit" name="le_username">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
      <property name="font">
       <font>
        <pointsize>11</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit { background-color: rgb(219, 236, 232); }</string>
      </property>
      <property name="readOnly">
       <bool>true</bool>
@@ -49,6 +64,9 @@
        <height>30</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/QtCLIENT/image/279936-snowflake-background-3840x2160-1080p.jpg);</string>
+     </property>
      <property name="text">
       <string>Войти</string>
      </property>
@@ -65,6 +83,9 @@
        <height>30</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/QtCLIENT/image/279936-snowflake-background-3840x2160-1080p.jpg);</string>
+     </property>
      <property name="text">
       <string>Зарегистрироваться</string>
      </property>
@@ -74,6 +95,9 @@
     <widget class="QTabWidget" name="tabWidget">
      <property name="enabled">
       <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
      </property>
      <property name="currentIndex">
       <number>0</number>
@@ -85,6 +109,9 @@
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
         <widget class="QTextEdit" name="te_main">
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/QtCLIENT/image/devushka-poliana-nebo.jpg);</string>
+         </property>
          <property name="readOnly">
           <bool>true</bool>
          </property>
@@ -99,6 +126,60 @@
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
         <widget class="QTextEdit" name="te_main_2">
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/QtCLIENT/image/1 75.jpg);</string>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_4">
+      <attribute name="title">
+       <string>Чат №3</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="te_main_3">
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/QtCLIENT/image/abs0073.jpg);</string>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_5">
+      <attribute name="title">
+       <string>Чат №4</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="te_main_4">
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/QtCLIENT/image/maxresdefault90.jpg);</string>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_6">
+      <attribute name="title">
+       <string>Чат №5</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_7">
+       <item row="0" column="0">
+        <widget class="QTextEdit" name="te_main_5">
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/QtCLIENT/image/sunlight-illustration-abstract-wavy-lines-circle-atmosphere-lens-flare-light-wave-shape-line-petal-2560x1440-px-computer-wallpaper-615970.jpg);</string>
+         </property>
          <property name="readOnly">
           <bool>true</bool>
          </property>
@@ -113,6 +194,9 @@
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="0">
         <widget class="QTextEdit" name="te_support">
+         <property name="styleSheet">
+          <string notr="true">border-image: url(:/QtCLIENT/image/116947-digital_art.jpg);</string>
+         </property>
          <property name="readOnly">
           <bool>true</bool>
          </property>
@@ -133,6 +217,9 @@
        <height>35</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/QtCLIENT/image/279936-snowflake-background-3840x2160-1080p.jpg);</string>
+     </property>
      <property name="text">
       <string>Отправить сообщение</string>
      </property>
@@ -149,6 +236,12 @@
        <height>35</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit { background-color: rgb(219, 236, 232); }</string>
+     </property>
+     <property name="maxLength">
+      <number>255</number>
+     </property>
     </widget>
    </item>
    <item row="3" column="0" colspan="2">
@@ -158,6 +251,9 @@
        <width>0</width>
        <height>35</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/QtCLIENT/image/279936-snowflake-background-3840x2160-1080p.jpg);</string>
      </property>
      <property name="text">
       <string>Подключиться</string>
@@ -175,6 +271,9 @@
        <height>35</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/QtCLIENT/image/279936-snowflake-background-3840x2160-1080p.jpg);</string>
+     </property>
      <property name="text">
       <string>Обновить чат</string>
      </property>
@@ -187,6 +286,9 @@
        <width>0</width>
        <height>35</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/QtCLIENT/image/279936-snowflake-background-3840x2160-1080p.jpg);</string>
      </property>
      <property name="text">
       <string>Выход</string>

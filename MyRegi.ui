@@ -11,31 +11,119 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MyRegi</string>
+   <string>Chat Registration</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#MyRegi { background-color: rgb(52, 57, 68); }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="2" column="2">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>230</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="0">
+   <item row="3" column="0">
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
        <pointsize>10</pointsize>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{ background-color: rgb(195, 203, 217); }</string>
+     </property>
      <property name="text">
       <string>Введите Логин:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="3">
+    <widget class="QTextEdit" name="te_Main">
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/QtCLIENT/image/116947-digital_art.jpg);</string>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="le_Login">
+     <property name="styleSheet">
+      <string notr="true">QLineEdit { background-color: rgb(219, 236, 232); }</string>
+     </property>
+     <property name="text">
+      <string>user9</string>
+     </property>
+     <property name="maxLength">
+      <number>15</number>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2">
+    <widget class="QPushButton" name="pb_back">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/QtCLIENT/image/279936-snowflake-background-3840x2160-1080p.jpg);</string>
+     </property>
+     <property name="text">
+      <string>Назад</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="label_3">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{ background-color: rgb(195, 203, 217); }</string>
+     </property>
+     <property name="text">
+      <string>Повторите Пароль:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{ background-color: rgb(195, 203, 217); }</string>
+     </property>
+     <property name="text">
+      <string>Введите Пароль:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLineEdit" name="le_Pass_2">
+     <property name="styleSheet">
+      <string notr="true">QLineEdit { background-color: rgb(219, 236, 232); }</string>
+     </property>
+     <property name="text">
+      <string>777</string>
+     </property>
+     <property name="maxLength">
+      <number>15</number>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="le_Pass_1">
+     <property name="styleSheet">
+      <string notr="true">QLineEdit { background-color: rgb(219, 236, 232); }</string>
+     </property>
+     <property name="text">
+      <string>777</string>
+     </property>
+     <property name="maxLength">
+      <number>15</number>
      </property>
     </widget>
    </item>
@@ -46,83 +134,18 @@
        <pointsize>14</pointsize>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{ background-color: rgb(195, 203, 217); }</string>
+     </property>
      <property name="text">
       <string>Регистрация нового пользователя</string>
      </property>
-    </widget>
-   </item>
-   <item row="4" column="2">
-    <spacer name="horizontalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>230</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="7" column="0">
-    <widget class="QPushButton" name="pb_back">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>Назад</string>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Введите Пароль:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="1">
-    <widget class="QLineEdit" name="le_Pass_2">
-     <property name="text">
-      <string>777</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label_3">
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Повторите Пароль:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QLineEdit" name="le_Pass_1">
-     <property name="text">
-      <string>777</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0" colspan="3">
-    <widget class="QTextEdit" name="te_Main">
-     <property name="readOnly">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="2">
+   <item row="6" column="2">
     <spacer name="horizontalSpacer_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -135,20 +158,16 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="1">
-    <widget class="QLineEdit" name="le_Login">
-     <property name="text">
-      <string>user9</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
+   <item row="3" column="2">
     <widget class="QPushButton" name="pb_reg">
      <property name="minimumSize">
       <size>
        <width>0</width>
-       <height>30</height>
+       <height>20</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/QtCLIENT/image/279936-snowflake-background-3840x2160-1080p.jpg);</string>
      </property>
      <property name="text">
       <string>Регистрация</string>
@@ -158,6 +177,8 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="qtclient.qrc"/>
+ </resources>
  <connections/>
 </ui>

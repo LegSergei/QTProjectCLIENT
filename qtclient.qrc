@@ -1,4 +1,13 @@
 <RCC>
-    <qresource prefix="QtCLIENT">
-    </qresource>
+  <qresource prefix="QtCLIENT">
+    <file>image/279936-snowflake-background-3840x2160-1080p.jpg</file>
+    <file>image/116947-digital_art.jpg</file>
+    <file>image/sunlight-illustration-abstract-wavy-lines-circle-atmosphere-lens-flare-light-wave-shape-line-petal-2560x1440-px-computer-wallpaper-615970.jpg</file>
+    <file>image/abs0073.jpg</file>
+    <file>image/devushka-poliana-nebo 75.jpg</file>
+    <file>image/1 75.jpg</file>
+    <file>image/abs0075.jpg</file>
+    <file>image/devushka-poliana-nebo.jpg</file>
+    <file>image/maxresdefault90.jpg</file>
+  </qresource>
 </RCC>

@@ -51,7 +51,7 @@ void QtCLIENT::my_Connect()
     connect(my_socket, &QTcpSocket::stateChanged, this, &QtCLIENT::my_stateChanged);//Сигнал об изменении состояния соединения подключен к соотв блоку кода
     connect(my_socket, &QTcpSocket::readyRead, this, &QtCLIENT::my_readyRead);//Сигнал о готовности к передачи подключен к соотв блоку кода
 
-    int port = 4110; // Номер порта который будет слушать сервер.
+    int port = 5155; // Номер порта который будет слушать сервер.
     QString address = "127.0.0.1"; //Адрес сервера в сети
     QDateTime date = QDateTime::currentDateTime();
     ui.te_support->append(date.toString("dd.MM.yyyy hh:mm:ss") + u8": Подключение...");
@@ -78,7 +78,6 @@ void QtCLIENT::my_SendMessage()
         ui.te_support->append(date.toString("dd.MM.yyyy hh:mm:ss") + u8": ОШИБКА! Сокет закрыт");
         return;
     }
-
     QString new_message = "AA0A%&?" + UserName + "%&?" + ui.le_message->text();
     my_socket->write(new_message.toUtf8());
     ui.le_message->clear();
@@ -195,6 +194,9 @@ void QtCLIENT::Refresh()
     {
         ui.te_main->clear();
         ui.te_main_2->clear();
+        ui.te_main_3->clear();
+        ui.te_main_4->clear();
+        ui.te_main_5->clear();
         QString new_message = "AA1A";
         my_socket->write(new_message.toUtf8());
         return;
@@ -203,7 +205,43 @@ void QtCLIENT::Refresh()
     {
         ui.te_main->clear();
         ui.te_main_2->clear();
+        ui.te_main_3->clear();
+        ui.te_main_4->clear();
+        ui.te_main_5->clear();
         QString new_message = "AA2A";
+        my_socket->write(new_message.toUtf8());
+        return;
+    }
+    if (Chat_number == 3)// чат № 3
+    {
+        ui.te_main->clear();
+        ui.te_main_2->clear();
+        ui.te_main_3->clear();
+        ui.te_main_4->clear();
+        ui.te_main_5->clear();
+        QString new_message = "AA1C";
+        my_socket->write(new_message.toUtf8());
+        return;
+    }
+    if (Chat_number == 4)// чат № 4
+    {
+        ui.te_main->clear();
+        ui.te_main_2->clear();
+        ui.te_main_3->clear();
+        ui.te_main_4->clear();
+        ui.te_main_5->clear();
+        QString new_message = "AA2C";
+        my_socket->write(new_message.toUtf8());
+        return;
+    }
+    if (Chat_number == 5)// чат № 5
+    {
+        ui.te_main->clear();
+        ui.te_main_2->clear();
+        ui.te_main_3->clear();
+        ui.te_main_4->clear();
+        ui.te_main_5->clear();
+        QString new_message = "AA3C";
         my_socket->write(new_message.toUtf8());
         return;
     }
@@ -234,11 +272,20 @@ void QtCLIENT::MainMessageManufacturing(QString String)
         if (Chat_number == 2) {
             ui.te_main_2->append(message);
         }
+        if (Chat_number == 3) {
+            ui.te_main_3->append(message);
+        }
+        if (Chat_number == 4) {
+            ui.te_main_4->append(message);
+        }
+        if (Chat_number == 5) {
+            ui.te_main_5->append(message);
+        }
     }
 
 }
 
-void QtCLIENT::ChatChange()
+void QtCLIENT::ChatChange() // событие смена чата
 {
     if (ui.tabWidget->currentIndex() == 0)
     {
@@ -248,6 +295,21 @@ void QtCLIENT::ChatChange()
     if (ui.tabWidget->currentIndex() == 1)
     {
         Chat_number = 2;
+        QtCLIENT::Refresh();
+    }
+    if (ui.tabWidget->currentIndex() == 2)
+    {
+        Chat_number = 3;
+        QtCLIENT::Refresh();
+    }
+    if (ui.tabWidget->currentIndex() == 3)
+    {
+        Chat_number = 4;
+        QtCLIENT::Refresh();
+    }
+    if (ui.tabWidget->currentIndex() == 4)
+    {
+        Chat_number = 5;
         QtCLIENT::Refresh();
     }
 
